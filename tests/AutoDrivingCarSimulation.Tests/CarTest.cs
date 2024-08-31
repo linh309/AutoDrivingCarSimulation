@@ -1,4 +1,6 @@
-﻿namespace AutoDrivingCarSimulation.Tests;
+﻿using AutoDrivingCarSimulation.Models;
+
+namespace AutoDrivingCarSimulation.Tests;
 
 public class CarTest
 {
