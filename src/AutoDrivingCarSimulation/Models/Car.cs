@@ -78,14 +78,14 @@ public class Car
     {
         if (_isCollied) return;
 
-        Console.WriteLine($"- {Name}, ({CurrentPosition.X}, {CurrentPosition.Y}) {ToDirectionText()}");
+        Console.WriteLine($"- {Name}, ({CurrentPosition.X}, {CurrentPosition.Y}) {ToDirectionText(CurrentDirection)}");
     }
 
     public void ShowInitialinfo()
     {
         if (_isCollied) return;
 
-        Console.WriteLine($"{Name}, ({CurrentPosition.X}, {CurrentPosition.Y}) {ToDirectionText()}, {_originalCommandText.ToUpper()}");
+        Console.WriteLine($"- {Name}, ({InitialPosition.X}, {InitialPosition.Y}) {ToDirectionText(_initialDirection)}, {_originalCommandText.ToUpper()}");
     }
 
     public bool IsMoveable() => _isStop is false;
@@ -144,9 +144,9 @@ public class Car
         };
     }
 
-    private string ToDirectionText()
+    private string ToDirectionText(EnumDirection direction)
     {
-        return CurrentDirection switch
+        return direction switch
         {
             EnumDirection.North => "N",
             EnumDirection.West => "W",

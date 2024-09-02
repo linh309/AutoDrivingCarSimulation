@@ -57,7 +57,7 @@ internal class Program
     private static bool ValidateCommands(string commands)
     {
         var validCommands = new HashSet<string> { "F", "L", "R" };
-        foreach (var command in commands)
+        foreach (var command in commands.ToUpper())
         {
             if (validCommands.Contains(command.ToString()) is false) return false;
         }
